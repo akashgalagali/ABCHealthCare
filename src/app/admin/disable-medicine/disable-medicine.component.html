@@ -1,0 +1,68 @@
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-header">
+        <a class="navbar-brand"routerLink="/" style="color: rgb(130, 252, 8);">ABC Health Care</a>
+      </div>
+         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/adminHome/{{email}}" >Home </a>
+            </li>
+              <li  class="nav-item active"><a class="nav-link" routerLink="/addCategory" Activerouter>Add Category |</a></li>
+       
+              <li  class="nav-item active"><a class="nav-link" routerLink="/addMedicine">Add Medicine |</a></li>
+              
+              <li  class="nav-item active"><a class="nav-link" routerLink="/adminMedicines">Medicines |</a></li>
+              
+              <li  class="nav-item active"><a class="nav-link" routerLink="/categories">Categories |</a></li>
+              
+              <li  class="nav-item active"><a class="nav-link" routerLink="/users">Users |</a></li>
+
+              <li  class="nav-item active">
+                  <a class="nav-link" routerLink="/statusMedicines">Change Status of Medicine | </a>
+                </li>
+                <li  class="nav-item active">
+                    <a class="nav-link" (click)='logout()'>Logout</a>
+                  </li>  
+                     </ul>
+          
+      </div>
+  </nav>
+<table class="table table table-striped" style="margin-top: 3%;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Seller</th>
+            <th>Image</th>
+            <th>Change Status</th>
+           </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let m of medicines'>
+            <td>{{m.id}}</td>
+            <td>{{m.name}}</td>
+            <td>{{m.price}}</td>
+            <td>{{m.seller}}</td>
+            <td>{{m.image}}</td>
+            <td><button href="#update" (click)='getMedicineByIdViaService(m.id)' class="btn-primary">Check status</button></td>
+            
+        </tr>
+    </tbody>
+</table>
+<div name="update" id="update">
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Medicine Name : {{medicine.name}}</h4>
+        <p class="card-text">Description :  {{medicine.description}}</p>
+        <p class="card-text">Seller : {{medicine.seller}}</p>
+        <p class="card-text">Available Status : {{medicine.available}}</p>
+        <button (click)='updateMedicineViaService()' class="btn-success">Change Status</button>
+    </div>
+</div>
+</div>

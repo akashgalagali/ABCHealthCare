@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/" style="color: rgb(130, 252, 8);">ABC Health Care</a>
+    </div>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+       
+            <li class="nav-item active"><a class="nav-link" routerLink="/medicines/{{email}}">Medicine List|</a></li>
+
+            <li class="nav-item active"><a class="nav-link" routerLink="/search" Activerouter>Search |</a></li>
+
+            <li class="nav-item active"><a class="nav-link" routerLink="/sorted">sorted Lsit |</a></li>
+
+            <li class="nav-item active"><a class="nav-link" routerLink="/prevOrder/{{email}}">order History |</a></li>
+            <li class="nav-item active"><a class="nav-link" routerLink="/cart/{{email}}">View Cart |</a></li>
+            <li class="nav-item active"><a class="nav-link" (click)='logout()'>Logout </a></li>
+
+
+        </ul>
+
+    </div>
+</nav>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../../assets/images/first.jpg" width="100%" height="500px" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="../../assets/images/second.jpg" width="100%" height="500px" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="../../assets/images/third.jpg" width="100%" height="500px" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+<div id="about" name="about" style="margin-top: 3%;">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+
+            <h1 class="display-3">Search Medicine</h1>
+            <h3 style="color: rgb(130, 252, 8);">ABC Healthcare</h3>
+            <hr class="my-2">
+            <div class=" row">
+                <div class="col-lg-6">
+                    <div class="card col-lg-6   offset-md-4" style="margin-top: 3%;">
+                        <img class="card-img-top" src="../../../assets/images/search.jpg"  alt="">
+                        <div class="card-body">
+                          <h4 class="card-title">{{name}}{{m.name}}</h4>
+                          <p class="card-text">{{desc}}{{m.description}}</p>
+                          <p class="card-text">{{price}}{{m.price}}</p>
+                          <p class="card-text">{{seller}}{{m.seller}}</p>
+                          <p class="card-text">{{available}}{{m.available}}</p>
+                          <h3>Search Medicine</h3>
+                          
+                            <input type="text"  class="form-control" placeholder="Name of Medicine" aria-describedby="helpId" [(ngModel)]='name1' > <br>
+                           
+                            <button style="margin-top: 1%; width:200px;" class="btn btn-success" (click)='getmedicineByName()'>search</button>
+                        
+                        </div>
+                        </div>
+                    <br>
+                    <br>
+
+                </div>
+                <div class="col-lg-6">
+                    <img src="../../assets/images/doctor.jpg" width="100%" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p> @2021 ABCHealthCare</p>
+    </div>

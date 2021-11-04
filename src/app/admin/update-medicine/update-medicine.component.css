@@ -1,0 +1,7 @@
+.full{
+    width: 70%;
+    height: 600px;
+    background-image: url(../../../assets/images/update.png);
+     background-repeat: no-repeat;
+     background-size: cover; 
+}

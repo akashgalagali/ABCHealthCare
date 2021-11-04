@@ -1,0 +1,7 @@
+.full{
+    width: 125%;
+    height: 700px;
+    background-image: url(../../../assets/images/login.png);
+     background-repeat: no-repeat;
+     background-size: cover; 
+}

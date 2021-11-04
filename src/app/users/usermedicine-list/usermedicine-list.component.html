@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/" style="color: rgb(130, 252, 8);">ABC Health Care</a>
+    </div>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+       
+            <li class="nav-item active"><a class="nav-link" routerLink="/medicines/{{email}}">Medicine List|</a></li>
+
+            <li class="nav-item active"><a class="nav-link" routerLink="/search" Activerouter>Search |</a></li>
+
+            <li class="nav-item active"><a class="nav-link" routerLink="/sorted">sorted Lsit |</a></li>
+
+            <li class="nav-item active"><a class="nav-link" routerLink="/prevOrder/{{email}}">order History |</a></li>
+            <li class="nav-item active"><a class="nav-link" routerLink="/cart/{{email}}">View Cart |</a></li>
+            <li class="nav-item active"><a class="nav-link" (click)='logout()'>Logout </a></li>
+        </ul>
+
+    </div>
+</nav>
+<h2 >Welcome {{user.name}}</h2>
+
+<div class="row row-cols-1 row-cols-md-4 g-4 container">
+    <div class="col" *ngFor='let m of medicines'>
+        <div class="card h-100">
+            <img src="../../../assets/images/{{m.image}}" width="100%" height="300px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Medicine</h5>
+                <p class="card-text" [(ngModel)]='mid'>ID : {{m.id}}</p>
+                <p class="card-text">Name : {{m.name}}</p>
+                <p class="card-text">Price : {{m.price}}</p>
+                <p class="card-text">Seller : {{m.seller}}</p>
+                <p class="card-text">Description : {{m.description}}</p>
+                <p class="card-text">Available Status : {{m.available}}</p>
+                <p class="card-text"><button type="button" class="btn btn-primary" (click)='addToCart(m.name)'>Add to
+                        cart</button></p>
+            </div>
+        </div>
+    </div>
+</div>
+

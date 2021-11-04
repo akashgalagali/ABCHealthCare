@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="navbar-header">
+      <a class="navbar-brand"routerLink="/" style="color: rgb(130, 252, 8);">ABC Health Care</a>
+    </div>
+       <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/adminHome/{{email}}" >Home </a>
+        </li>
+            <li  class="nav-item active"><a class="nav-link" routerLink="/addCategory" Activerouter>Add Category |</a></li>
+     
+            <li  class="nav-item active"><a class="nav-link" routerLink="/addMedicine">Add Medicine |</a></li>
+            
+            <li  class="nav-item active"><a class="nav-link" routerLink="/adminMedicines">Medicines |</a></li>
+            
+            <li  class="nav-item active"><a class="nav-link" routerLink="/categories">Categories |</a></li>
+            
+            <li  class="nav-item active"><a class="nav-link" routerLink="/users">Users |</a></li>
+
+            <li  class="nav-item active">
+                <a class="nav-link" routerLink="/statusMedicines">Change Status of Medicine | </a>
+              </li>
+              <li  class="nav-item active">
+                  <a class="nav-link" (click)='logout()'>Logout</a>
+                </li>  
+                   </ul>
+        
+    </div>
+</nav>
+  
+  <div class="card col-lg-4   offset-md-4" style="margin-top: 3%;">
+    <img class="card-img-top" src="../../../assets/images/medicine.jpg" alt="">
+    <div class="card-body">
+      <h3>Add Medicine</h3>
+  
+        <input type="text"  class="form-control" placeholder="Name of Medicine" aria-describedby="helpId" [(ngModel)]='medicine.name'><br>
+        <input type="number"class="form-control" placeholder="Price of Medicine" aria-describedby="helpId"  [(ngModel)]='medicine.price'><br>
+        <input type="text"  class="form-control" placeholder="Seller of Medicine" aria-describedby="helpId" [(ngModel)]='medicine.seller'><br>
+        <input type="text"  class="form-control" placeholder=" Medicine Description" aria-describedby="helpId" [(ngModel)]='medicine.description'><br>
+        
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" [(ngModel)]='medicine.available'> Medicine Available
+            </label>
+        </div><br> <br>
+        <label for="">Select Image</label>
+        <select  class="form-control" [(ngModel)]='medicine.image'> 
+          <option type="text" value="ayurvedic.jpg">Ayurvedic</option>
+          <option type="text" value="capsule.jpg">Capsule</option>
+          <option type="text" value="injection.png">Injection</option>
+          <option type="text" value="tablets.jpg">Tablets</option>
+          <option type="text" value="tonic.jpg">Tonic</option>
+          <option type="text" value="ointment.jpg">Ointment/ Cream</option>
+        </select> <br>
+  
+         <label for="Select Category">Select Category</label>
+         <select  class="form-control" [(ngModel)]='medicine.cid' >
+          <option  *ngFor ='let c of categories' type="number" value="{{c.id}}">{{c.name}}</option>
+        </select> <br>
+         <button style="margin-top: 1%; width:200px;" class="btn btn-success" (click)='postMedicineViaService()'>Add Medicine</button>
+  
+    </div>
+  </div>

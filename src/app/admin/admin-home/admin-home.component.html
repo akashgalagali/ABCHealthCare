@@ -1,0 +1,72 @@
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="navbar-header">
+        <a class="navbar-brand"routerLink="/" style="color: rgb(130, 252, 8);">ABC Health Care</a>
+      </div>
+         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/adminHome/{{email}}" >Home </a>
+          </li>
+              <li  class="nav-item active"><a class="nav-link" routerLink="/addCategory" Activerouter>Add Category |</a></li>
+       
+              <li  class="nav-item active"><a class="nav-link" routerLink="/addMedicine">Add Medicine |</a></li>
+              
+              <li  class="nav-item active"><a class="nav-link" routerLink="/adminMedicines">Medicines |</a></li>
+              
+              <li  class="nav-item active"><a class="nav-link" routerLink="/categories">Categories |</a></li>
+              
+              <li  class="nav-item active"><a class="nav-link" routerLink="/users">Users |</a></li>
+
+              <li  class="nav-item active">
+                  <a class="nav-link" routerLink="/statusMedicines">Change Status of Medicine | </a>
+                </li>
+                <li  class="nav-item active">
+                    <a class="nav-link" (click)='logout()'>Logout</a>
+                  </li>  
+                     </ul>
+          
+      </div>
+  </nav>
+  <div class="container">
+    <div class="row" style="display: flex;justify-content: space-around; margin-top: 3%;">
+      <div class="card text-white bg-primary mb-4" style="max-width: 18rem;">
+        <div class="card-header">Users</div>
+        <div class="card-body">
+          <h5 class="card-title">Totsl count of users </h5>
+          <p class="card-text">{{users.length}}</p>
+        </div>
+      </div>
+      <div class="card text-white bg-secondary mb-4" style="max-width: 18rem;">
+        <div class="card-header">Categories</div>
+        <div class="card-body">
+          <h5 class="card-title">Total count of categories</h5>
+          <p class="card-text">{{categories.length}}</p>
+        </div>
+      </div>
+      <div class="card text-white bg-success mb-4" style="max-width: 18rem;">
+        <div class="card-header">Medicines</div>
+        <div class="card-body">
+          <h5 class="card-title">Total count of Medicines</h5>
+          <p class="card-text">{{medicines.length}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor='let c of categories'>
+        <div class="card h-100">
+          <img src="../../../assets/images/categaryList.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Category</h5>
+            <p class="card-text">Name : {{c.name}}</p>
+          </div>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>

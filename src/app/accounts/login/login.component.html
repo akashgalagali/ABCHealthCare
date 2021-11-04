@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/" style="color: rgb(130, 252, 8);">ABC Health Care</a>
+  </div>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+              <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active"><a class="nav-link" href="#about">About Us |</a></li>
+
+          <li class="nav-item active"><a class="nav-link" routerLink="/register" Activerouter>Register |</a></li>
+
+          <li class="nav-item active"><a class="nav-link" routerLink="/login">login </a></li>
+
+
+
+
+      </ul>
+
+  </div>
+</nav>
+
+<div style="display: flex;justify-content: space-evenly;">
+    <div class="full">
+    </div>
+    <div class="container" style="margin-top: 15%;">
+        <h3> Welcome back</h3>
+        <input type="text" class="form-control" placeholder="Enter the User Name"
+            [(ngModel)]='email'>
+            <br>
+        <input  type="password" class="form-control" placeholder="Enter the Password"
+            [(ngModel)]='pwd'>
+            <br>
+        <select  class="form-control" [(ngModel)]='role'>
+            <option  class="form-control" value='admin'>admin</option>
+            <option  class="form-control" value='customer'>Customer</option>
+        </select>
+        <button style="margin-top: 1%; width:200px;" class="btn btn-success" (click)='validateUser()'>login</button>
+    </div>
+
+</div>

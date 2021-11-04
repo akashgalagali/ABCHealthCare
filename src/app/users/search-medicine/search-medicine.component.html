@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/" style="color: rgb(130, 252, 8);">ABC Health Care</a>
+  </div>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+     
+          <li class="nav-item active"><a class="nav-link" routerLink="/medicines/{{email}}">Medicine List|</a></li>
+
+          <li class="nav-item active"><a class="nav-link" routerLink="/search" Activerouter>Search |</a></li>
+
+          <li class="nav-item active"><a class="nav-link" routerLink="/sorted">sorted Lsit |</a></li>
+
+          <li class="nav-item active"><a class="nav-link" routerLink="/prevOrder/{{email}}">order History |</a></li>
+          <li class="nav-item active"><a class="nav-link" routerLink="/cart/{{email}}">View Cart |</a></li>
+          <li class="nav-item active"><a class="nav-link" (click)='logout()'>Logout </a></li>
+      </ul>
+
+  </div>
+</nav>
+<div class="card col-lg-4   offset-md-4" style="margin-top: 3%;">
+<img class="card-img-top" src="../../../assets/images/search.jpg"  alt="">
+<div class="card-body">
+  <h4 class="card-title">{{name}}{{m.name}}</h4>
+  <p class="card-text">{{desc}}{{m.description}}</p>
+  <p class="card-text">{{price}}{{m.price}}</p>
+  <p class="card-text">{{seller}}{{m.seller}}</p>
+  <p class="card-text">{{available}}{{m.available}}</p>
+  <h3>Search Medicine</h3>
+  
+    <input type="text"  class="form-control" placeholder="Name of Medicine" aria-describedby="helpId" [(ngModel)]='name1' > <br>
+   
+    <button style="margin-top: 1%; width:200px;" class="btn btn-success" (click)='getmedicineByName()'>search</button>
+
+</div>
+</div>
